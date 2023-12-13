@@ -7,7 +7,7 @@ def line_count(infile):
 
         lines_count = len(file.readlines())
 
-        return lines_count
+    return lines_count
         
 
 
