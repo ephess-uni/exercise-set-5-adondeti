@@ -23,4 +23,12 @@ if __name__ == "__main__":
 
     # Complete the data processing steps using numpy here.
 
+    data = np.loadtxt(INFILE)
+
+    data_mean = data - np.mean(data, axis = 0)
+
+    data_standardized = data_mean / np.std(data_mean)
+
     # Save the output to OUTFILE using numpy routines.
+    np.savetxt(OUTFILE, data_standardized, fmt = "%.2e")
+    
