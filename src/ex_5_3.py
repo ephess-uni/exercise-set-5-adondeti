@@ -7,6 +7,7 @@ This module contains an entry point that:
 """
 import numpy as np
 from argparse import ArgumentParser
+import argparse
 
 if __name__ == "__main__":
     # Create your argument parser object here.
@@ -24,7 +25,7 @@ if __name__ == "__main__":
     parser.add_argument("infile")
     parser.add_argument("outfile")
 
-    args = parser.add_args()
+    args = parser.parse_args()
 
     data = np.loadtxt(args.infile)
     data_mean = data - np.mean(data)
