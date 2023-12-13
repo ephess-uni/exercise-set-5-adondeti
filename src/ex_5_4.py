@@ -17,5 +17,8 @@ input_file = data_dir / "ex_5_4-data.csv"
 output_file = output_dir / "ex_5_4-processed.csv"
 
 # Process the input data using numpy
-
+dta = np.loadtxt(input_file)
+# Input any value less than 0 to 0
+dta[dta < 0] = 0
 # Save the result to output_file
+np.savetxt(output_file, dta, fmt = "%.2e")

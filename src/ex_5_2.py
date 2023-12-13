@@ -22,5 +22,13 @@ if __name__ == "__main__":
     OUTFILE = root_dir / "outputs" / "ex_5_2-processed.csv"
 
     # Complete the data processing steps using numpy here.
+    # load the infile 
+    data = np.loadtxt(INFILE)
+    # get the mean of zero 
+    data_mean = data - np.mean(data, axis = 0)
+    # standardize the data 
+    data_standardized = data_mean / np.std(data_mean)
 
     # Save the output to OUTFILE using numpy routines.
+    np.savetxt(OUTFILE, data_standardized, fmt = "%.2e")
+    
