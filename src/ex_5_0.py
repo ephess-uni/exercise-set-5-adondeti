@@ -3,11 +3,14 @@
 
 def line_count(infile):
 
-    with open(infile, "r") as file:
+    with open(infile, 'r') as file:
 
-        lines_count = len(file.readlines())
+        lines = file.readlines()
 
-    return lines_count
+        lines_count = len(lines)
+    print(lines_count)
+
+
         
 
 
