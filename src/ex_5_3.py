@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     parser = ArgumentParser(description = desc)
 
-    parser.add_argument("infile")
-    parser.add_argument("outfile")
+    parser.add_argument("infile", type = argparse.FileType("r"))
+    parser.add_argument("outfile", type = argparse.FileType("w"))
 
     args = parser.parse_args()
 
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     data_std = data_mean / np.std(data_mean)
 
-    np.savetxt(args.outfile, data_std, format = "%.2e")
+    np.savetxt(args.outfile, data_std, fmt = "%.2e")
 
     
 
