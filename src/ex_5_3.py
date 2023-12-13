@@ -18,20 +18,22 @@ if __name__ == "__main__":
     # To test your program with arguments, run it from the command line
     # (see README.md for more details)
 
+    # description 
     desc = "This program applies a standard scale transform to the data in infile and writes it to outfile."
-
+    # instance of the parser 
     parser = ArgumentParser(description = desc)
-
+    # add the argument 
     parser.add_argument("infile")
     parser.add_argument("outfile")
-
+    # pass the args
     args = parser.parse_args()
-
+    # load the data 
     data = np.loadtxt(args.infile)
+    # get the mean 
     data_mean = data - np.mean(data)
-
+    # Standardize the data
     data_std = data_mean / np.std(data_mean)
-
+    # save the data to the output file 
     np.savetxt(args.outfile, data_std, fmt = "%.2e")
 
     
