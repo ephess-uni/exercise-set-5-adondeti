@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     parser = ArgumentParser(description = desc)
 
-    parser.add_argument("infile", type = argparse.FileType("r"))
-    parser.add_argument("outfile", type = argparse.FileType("w"))
+    parser.add_argument("infile")
+    parser.add_argument("outfile")
 
     args = parser.parse_args()
 
