@@ -19,14 +19,16 @@ if __name__ == "__main__":
     # To test your program with arguments, run it from the command line
     # (see README.md for more details)
 
+    
+    # Defining the description
     desc = "This program prints the number of lines in infile."
-
+    # create an instance of argparse
     parser = argparse.ArgumentParser(description = desc)
-
+    # add the infile file
     parser.add_argument("infile")
-
+    # parse the args
     args = parser.parse_args()
-
+    # get the line counts
     line_count(args.infile)
 
     
