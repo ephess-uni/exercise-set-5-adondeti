@@ -24,7 +24,8 @@ if __name__ == "__main__":
     parser.add_argument(infile)
     args = parser.parse_args()
 
-    line_count(args.infile)
+    if args.infile:
+        main(args.infile)
 
     
 
