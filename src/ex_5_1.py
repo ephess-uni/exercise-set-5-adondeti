@@ -21,7 +21,7 @@ if __name__ == "__main__":
     desc = "This program prints the number of lines in infile."
     parser = argparse.ArgumentParser(description = desc)
 
-    parser.add_argument("infile", help = ""command", nargs = "?")
+    parser.add_argument("infile", help = "command", nargs = "?")
     args = parser.parse_args()
 
     if args.infile:
